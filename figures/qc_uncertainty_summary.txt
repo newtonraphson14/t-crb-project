@@ -1,0 +1,11 @@
+total_core_rows: 749410
+flagged_rows: 749409
+flagged_pct: 100.00
+uncertainty_present_rows: 605596
+uncertainty_missing_rows: 143814
+uncertainty_missing_pct: 19.19
+strict_unc005_rows: 529803
+strict_unc005_pct: 70.70
+uncertainty_min: 0.00000
+uncertainty_median: 0.01200
+uncertainty_max: 2.14390

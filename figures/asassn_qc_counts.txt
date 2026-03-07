@@ -1,0 +1,7 @@
+asassn_points_raw: 223
+asassn_hjd_min: 2456003.12981
+asassn_hjd_max: 2458185.07642
+asassn_bin7d_rows: 121
+overlap_start_jd_bin: 2457023.50000
+overlap_end_jd_bin: 2458178.50000
+n_overlap_bins: 71

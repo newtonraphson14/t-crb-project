@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Local Jupyter execution outputs and checkpoints
+.ipynb_checkpoints/
+
+# GitHub hard limit workaround; provenance stays documented in notes
+data/raw/aavso_tcrb_raw_fullrange.csv
+
+# Temporary lock files
+.~lock.*

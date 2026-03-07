@@ -1,0 +1,4 @@
+n_overlap: 71
+median_delta_mag_asassn_minus_aavso: -0.019000
+mad_delta_mag_asassn_minus_aavso: 0.052000
+spearman_correlation: 0.882985
