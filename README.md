@@ -7,6 +7,16 @@ Analysis and artifact pipeline for T Coronae Borealis (`T CrB`) built around two
 
 The repo contains cleaned tabular products, figures, notebooks, and a first raw-image lane for T CrB reference / single-epoch cutouts.
 
+This project is organized as a reproducible astrophysics workflow for the recurrent nova `T CrB`, combining public photometry archives with early raw-image infrastructure for historical and modern visual context.
+
+## Highlights
+
+- dual-lane analysis design: `modern V` for high-signal recent behavior and `all-cycles Vis` for cross-cycle context
+- reproducible notebook flow backed by `tcrb_processing.py`
+- AAVSO vs ASAS-SN overlap validation with exported metrics and figures
+- reference and timeline image assets from PS1 / Legacy Survey
+- live DASCH DR7 historical cutout ingestion now validated in-repo
+
 ## Current status
 
 - Core photometry pipeline implemented in `tcrb_processing.py`
@@ -15,6 +25,8 @@ The repo contains cleaned tabular products, figures, notebooks, and a first raw-
 - Cross-cycle `Vis` products generated
 - AAVSO vs ASAS-SN overlap cross-check generated
 - Raw-image reference assets and a small PS1 progressive panel added
+- DASCH historical downloader wired and one live DR7 cutout validated
+- Local staging workflow for DASCH / ZTF raw-image batches added
 
 ## Main outputs
 
@@ -52,7 +64,7 @@ The repo contains cleaned tabular products, figures, notebooks, and a first raw-
 ## Repo layout
 
 - `tcrb_processing.py` — main photometry pipeline and artifact writers
-- `fetch_raw_images.py` — downloader for reference / PS1 single-epoch image assets
+- `fetch_raw_images.py` — fetcher for reference / PS1 assets plus local staging tool for DASCH / ZTF batches
 - `notebooks/` — notebook wrappers for each pipeline stage
 - `data/` — raw, interim, clean, and image assets
 - `figures/` — plots, summaries, and image panels
@@ -67,6 +79,27 @@ cd "/home/ikbarfaiz/Astrophysics Project/T CrB Projects"
 ./.venv/bin/python -c "from tcrb_processing import run_all; run_all('.')"
 ./.venv/bin/python fetch_raw_images.py
 ```
+
+To stage locally downloaded DASCH or ZTF image batches into the repo:
+
+```bash
+./.venv/bin/python fetch_raw_images.py --skip-reference --stage-spec notes/raw_image_batch_specs/dasch_1935_1955_example.json
+./.venv/bin/python fetch_raw_images.py --skip-reference --stage-spec notes/raw_image_batch_specs/ztf_2018_2025_example.json
+```
+
+Edit the example JSON files first so `source_path` points to real local files.
+
+To query/download live raw-image assets:
+
+```bash
+./.venv/bin/python fetch_raw_images.py --skip-reference --download-dasch --max-epochs 3
+./.venv/bin/python fetch_raw_images.py --skip-reference --download-ztf --dry-run --max-epochs 3 --ztf-filtercode zr
+```
+
+Notes:
+
+- DASCH DR7 cutout download is validated on one real historical epoch in this repo.
+- ZTF metadata/cutout wiring is available; `--dry-run` is the safest first pass before pulling full FITS files.
 
 To verify notebooks:
 
@@ -90,6 +123,7 @@ The repo now includes:
 - Legacy Survey reference cutouts
 - PS1 reference cutouts
 - PS1 single-epoch warp cutouts
+- one live DASCH DR7 historical cutout proof-of-concept
 - a first stitched modern panel: `figures/raw_images/modern_panels/tcrb_ps1_r_timeline.png`
 
 See:
@@ -97,6 +131,7 @@ See:
 - `notes/raw_image_assets.md`
 - `notes/raw_image_pipeline_map.md`
 - `notes/raw_image_guide.md`
+- `notes/raw_image_batch_specs/README.md`
 
 ## Acknowledgment note
 

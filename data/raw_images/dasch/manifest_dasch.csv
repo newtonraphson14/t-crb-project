@@ -1,0 +1,2 @@
+source,product_type,file_name,local_path,url,bytes,sha256,date_obs,jd_mid,ra_deg,dec_deg,band_or_emulsion,exptime_s,pixel_scale_arcsec,wcs_status,notes
+dasch,postage_stamp_fits_gz,tcrb_dasch_ai38245_1943-07-01_sol0_cutout.fits.gz,data/raw_images/dasch/tcrb_dasch_ai38245_1943-07-01_sol0_cutout.fits.gz,https://api.starglass.cfa.harvard.edu/public/dasch/dr7/cutout,925349,a3382ac554eaaeea204a52ad66d71b65e5f506051db3599b0453df5fb923d372,1943-07-01,,239.87567,25.92017,ai,109.00,,imwcs,DASCH cutout for plate ai38245 solution_number=0. Server-side cutout size is fixed by DR7.

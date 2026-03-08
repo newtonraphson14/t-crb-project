@@ -1,0 +1,35 @@
+{
+  "source": "ztf",
+  "manifest_output": "data/raw_images/ztf/manifest_ztf.csv",
+  "panel_output": "figures/raw_images/modern_panels/tcrb_ztf_2018_2025_timeline.png",
+  "assets": [
+    {
+      "source_path": "/absolute/path/to/ztf_science_cutout_2018-04-12_g.jpg",
+      "target_path": "data/raw_images/ztf/tcrb_ztf_2018-04-12_g_sci.jpg",
+      "product_type": "science_cutout_jpeg",
+      "url": "https://irsa.ipac.caltech.edu/docs/program_interface/ztf_api.html",
+      "date_obs": "2018-04-12",
+      "jd_mid": "2458220.5",
+      "band_or_emulsion": "zg",
+      "exptime_s": "30",
+      "pixel_scale_arcsec": "1.01",
+      "wcs_status": "display_cutout",
+      "panel_include": true,
+      "panel_label": "2018-04-12",
+      "notes": "Representative ZTF science cutout for the modern image lane."
+    },
+    {
+      "source_path": "/absolute/path/to/ztf_reference_cutout_2018-04-12_g.fits",
+      "target_path": "data/raw_images/ztf/tcrb_ztf_2018-04-12_g_ref.fits",
+      "product_type": "reference_cutout_fits",
+      "url": "https://irsa.ipac.caltech.edu/docs/program_interface/ztf_api.html",
+      "date_obs": "2018-04-12",
+      "jd_mid": "2458220.5",
+      "band_or_emulsion": "zg",
+      "exptime_s": "",
+      "pixel_scale_arcsec": "1.01",
+      "wcs_status": "native_cutout",
+      "notes": "Reference cutout paired with the same representative epoch."
+    }
+  ]
+}

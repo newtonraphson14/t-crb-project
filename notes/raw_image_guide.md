@@ -71,9 +71,13 @@ Dokumen ini mencatat provenance dan cara baca figure PNG quick-look yang dihasil
 - Lane `1935–1955` dan `1860–1870` sengaja memakai `Vis`; ini keputusan desain pipeline, bukan fallback sementara.
 - Figure overlap ASAS-SN memakai pendekatan `HJD ~= JD` sebagai first-pass comparison; pakai untuk cross-check, bukan kalibrasi absolut.
 - File raw ZTF tetap disimpan di `data/raw/ztf_tcrb_lightcurve_raw.csv`, tetapi tidak dipakai karena isi unduhannya adalah halaman HTML `504`.
+- Raw-image downloader terpisah di `fetch_raw_images.py` sekarang bisa query DASCH dan ZTF tanpa bergantung pada file light-curve raw ZTF di atas.
 
 ## Regeneration
 
 - Jalankan `run_all()` untuk rebuild artefak utama dan perbarui `notes/decisions.md`.
 - Jalankan `write_raw_image_guide()` untuk me-refresh dokumen ini setelah figure atau metrik berubah.
 - Untuk verifikasi notebook, gunakan `jupyter nbconvert --to notebook --execute notebooks/02_windows_export.ipynb` dan analog untuk notebook `03` serta `04`.
+- Untuk asset image DASCH / ZTF yang sudah diunduh manual, stage dulu batch-nya dengan `fetch_raw_images.py --skip-reference --stage-spec <spec.json>` memakai template di `notes/raw_image_batch_specs/`.
+- Untuk unduhan live historical lane, jalankan `fetch_raw_images.py --skip-reference --download-dasch`.
+- Untuk unduhan live modern lane, mulai aman dengan `fetch_raw_images.py --skip-reference --download-ztf --dry-run`.

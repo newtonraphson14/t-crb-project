@@ -1,0 +1,35 @@
+{
+  "source": "dasch",
+  "manifest_output": "data/raw_images/dasch/manifest_dasch.csv",
+  "panel_output": "figures/raw_images/historical_panels/tcrb_dasch_1935_1955_timeline.png",
+  "assets": [
+    {
+      "source_path": "/absolute/path/to/dasch_plate_preview_1937-05-21.jpg",
+      "target_path": "data/raw_images/dasch/tcrb_dasch_AC12345_1937-05-21_plate_preview.jpg",
+      "product_type": "plate_preview_jpeg",
+      "url": "https://dasch.cfa.harvard.edu/",
+      "date_obs": "1937-05-21",
+      "jd_mid": "2428683.5",
+      "band_or_emulsion": "pg",
+      "exptime_s": "1800",
+      "pixel_scale_arcsec": "",
+      "wcs_status": "display_only",
+      "panel_include": true,
+      "panel_label": "1937-05-21",
+      "notes": "Representative DASCH preview for the 1935-1955 historical lane."
+    },
+    {
+      "source_path": "/absolute/path/to/dasch_plate_cutout_1937-05-21.fits",
+      "target_path": "data/raw_images/dasch/tcrb_dasch_AC12345_1937-05-21_cutout.fits",
+      "product_type": "postage_stamp_fits",
+      "url": "https://dasch.cfa.harvard.edu/",
+      "date_obs": "1937-05-21",
+      "jd_mid": "2428683.5",
+      "band_or_emulsion": "pg",
+      "exptime_s": "1800",
+      "pixel_scale_arcsec": "",
+      "wcs_status": "native_plate_solution",
+      "notes": "FITS cutout paired with the same historical plate preview."
+    }
+  ]
+}
